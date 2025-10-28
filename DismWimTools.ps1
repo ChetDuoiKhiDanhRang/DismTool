@@ -597,8 +597,9 @@ function WimAndMountPoint {
                                     $SelectIndex = -1
                                     $MountDir = ""
                                     dism /Cleanup-Wim
-                                    Read-Host
+                                    
                                 }
+                                Read-Host
                                 break
                             }
                             "d" {
@@ -608,8 +609,8 @@ function WimAndMountPoint {
                                     $SelectIndex = -1
                                     $MountDir = ""
                                     dism /Cleanup-Wim
-                                    Read-Host
                                 }
+                                Read-Host
                                 break
                             }
                             "e" {
@@ -782,4 +783,5 @@ while ($SelectedItem -ne 0)
     }   
 
 }
+
 
