@@ -541,8 +541,8 @@ function WimAndMountPoint {
                 $packages = Get-ChildItem -Recurse $appxFolder -File | Select-Object -Property Name,FullName | Where-Object {$_.Name -imatch "[*.appx,*.appxbundle,*.msix,*.msixbundle]$"}
                 $appxs = @()
                 $depends = @()
-                foreach ($p in $packages) {
-                    if (Test-PackageIsFramework -PackagePath $p.FullName) { $depends += $p } else { $appxs += $p }
+                foreach ($pf in $packages) {
+                    if (Test-PackageIsFramework -PackagePath $pf.FullName) { $depends += $pf } else { $appxs += $pf }
                 }
                 
                 Write-Host "Appx packages:"
@@ -778,4 +778,5 @@ while ($SelectedItem -ne 0)
             0 {cls; break}
         }
     }   
+
 }
