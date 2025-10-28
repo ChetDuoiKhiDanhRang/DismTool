@@ -571,6 +571,8 @@ function WimAndMountPoint {
                 if (($packageFolder -ne $null) -and ($packageFolder.Length -gt 0) -and (Test-Path -Path $packageFolder)){
                     dism /Image:"$($MountDir)" /Add-Package /PackagePath:"$($packageFolder)"
                 }
+
+                Read-Host
                 break
             }
 
@@ -780,3 +782,4 @@ while ($SelectedItem -ne 0)
     }   
 
 }
+
